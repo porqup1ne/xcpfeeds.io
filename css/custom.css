@@ -1,0 +1,374 @@
+/*
+ * Custom CSS
+ */
+body {
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+    margin-top: 75px;
+}
+
+.nav .dropdown-menu a img,
+.nav.nav-stacked li a img,
+#sports-menu a img {
+    margin-right: 5px;
+}
+
+#sports-menu .submenu a img {
+    margin-left: 20px;
+}
+
+/* CSS for datatables */
+.search-results-footer {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+.search-results-header {
+  background-color: #ccc;
+}
+
+.dataTables_wrapper .search-results-footer .dataTables_length {
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:active {
+    color: #333 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_paginate .paginate_button, 
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #fff !important;
+}
+
+.nav-tabs.nav-primary>li.active>a, 
+.nav-tabs.nav-primary>li.active>a:hover, 
+.nav-tabs.nav-primary>li.active>a:focus {
+    background-color: #428bca;
+    color: #fff;
+}
+
+table.dataTable tbody td {
+  padding: 5px 5px;
+}
+
+.search-results-footer .dataTables_length {
+    margin-top:10px;
+    margin-left:10px;
+}
+.search-results-header {
+  padding: 5px;
+}
+.btn-header-upcoming-past {
+    top: -5px;
+    right: -8px;
+}
+
+.btn-header-odds {
+    top: -5px;
+    right: -3px;
+}
+
+td.splitrow {
+    padding: 0px !important;
+    vertical-align: middle !important;
+}
+
+td.splitrow div {
+    padding: 5px;
+}
+
+td.splitrow .border-bottom {
+    border-bottom: 1px solid #ddd;
+}
+td.splitrow .half {
+    display:inline-block;    
+    width:50%;
+    text-align:center; 
+    padding: 0px !important;
+}
+td.splitrow .third {
+    display:inline-block;    
+    width:33.3%;
+    text-align:center; 
+    padding: 0px !important;
+}
+
+td.splitrow.overunder .border-bottom {
+    border-bottom: 0px;
+}
+
+
+th.moneyline,
+th.spread,
+th.overunder {
+    text-align:center;
+}
+
+
+.center {
+    text-align: center;
+}
+.justify {
+    text-align: justify;
+}
+
+th.view {
+    width: 1px;
+}
+
+td.moneyline {
+    width: 100px;
+}
+td.spread {
+    width: 120px;
+}
+td.overunder {
+    width: 95px;
+}
+td.timestamp {
+    width: 120px;
+}
+
+.panel-heading>.dropdown .dropdown-toggle {
+    color: #000;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid transparent !important;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.event-label {
+    width: 100px;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+.no-margin {
+  margin: 0px !important;
+
+}
+.min-height-220 {
+  min-height:220px;
+}
+.no-border-radius {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0px !important;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+td.btn-padding-3px {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-right: 3px !important;
+}
+.submenu .list-group-item {
+    background-color: #efefef;
+}
+
+td.view-btn {
+    width: 60px;
+    padding: 0px !important;
+    border-right: 0px !important;
+}
+td.view-btn > a.btn {
+    font-size: 2em;
+    border-radius: 0px;
+    min-height: 61px;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+.navbar-logo {
+    display: inline-block;
+    margin: -20px 0px -20px 0px;
+}
+.navbar-logo > img {
+    height: 30px;
+}
+.navbar-sitename {
+    font-family: 'Prompt', sans-serif;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 20pt;
+}
+.navbar-logo-color { 
+    color: #ed1650; 
+}
+.nav-pills-no-radius li>a {
+    border-radius: 0px !important;
+}
+.navbar-default {
+  background-color: #000000;
+  border-color: #000;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #000000;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #90062c;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #90062c;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff;
+  background-color: #90062c;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #90062c;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #90062c;
+}
+.navbar-default .navbar-toggle {
+  border-color: #90062c;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #90062c;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #fff;
+}
+
+.table>thead>tr>td.info, 
+.table>tbody>tr>td.info, 
+.table>tfoot>tr>td.info, 
+.table>thead>tr>th.info, 
+.table>tbody>tr>th.info, 
+.table>tfoot>tr>th.info, 
+.table>thead>tr.info>td, 
+.table>tbody>tr.info>td, 
+.table>tfoot>tr.info>td, 
+.table>thead>tr.info>th, 
+.table>tbody>tr.info>th, 
+.table>tfoot>tr.info>th {
+    background-color: #ddd;
+    border-bottom: 0px;
+}
+
+#sportsMatchesBack,
+#brandLogo,
+.clickable { 
+  cursor: pointer; 
+}
+
+
+
+/* BTC wallet */
+.btc-wallet {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 1px solid #000;
+}
+.btc-wallet.dropdown-menu>li>a {
+    padding: 5px;
+}
+.wallet-balance {
+    padding: 5px;
+}
+.btc-wallet-passphrase ,
+.btc-wallet-blackbox {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin: 0px auto 10px auto;
+    text-align: center;
+    width: 100%;
+    border: 0px !important;
+}
+.btc-wallet-password .modal-dialog,
+.btc-wallet-password .modal-dialog,
+.btc-wallet-password .modal-dialog {
+    max-width: 300px;
+}
+.btc-wallet-password input {
+    margin-bottom: 10px;
+}
+.wallet-header {
+    padding: 10px;
+}
+.btc-wallet-address  .modal-dialog {
+    max-width: 350px;
+}
+
+/* Themes CSS */
+.dropdown.dropdown-colorselector {
+    border: 5px solid #fff;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.navbar-default .colorselector {
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+
+.white {
+  color: #fff !important;
+}
+.bold {
+  font-weight: bold;
+}

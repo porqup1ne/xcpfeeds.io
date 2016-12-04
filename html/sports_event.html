@@ -1,0 +1,201 @@
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <div class="panel panel-theme" id="sportsMatchesBack">
+            <div class="panel-heading">
+                <i class="glyphicon glyphicon-chevron-left"></i> 
+                Back to events list
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="panel panel-theme" >
+            <div class="panel-heading clickable collapsible">
+                <i class="fa fa-calendar fa-lg"></i>
+                Event Information
+                <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body no-padding min-220 min-height-220">
+                <table class="table table-hover table-striped table-condensed no-margin">
+                <tbody>
+                <tr>
+                    <th class="event-label">Home Team</th>
+                    <td id="home_team"></td>
+                </tr>
+                <tr>
+                    <th>Away Team</th>
+                    <td id="away_team"></td>
+                </tr>
+                <tr>
+                    <th>Sport</th>
+                    <td id="sport"></td>
+                </tr>
+                <tr>
+                    <th>League</th>
+                    <td id="league"></td>
+                </tr>
+                <tr>
+                    <th>Region</th>
+                    <td id="region"></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <th>Starts At</th>
+                    <td id="match_time"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="panel panel-theme">
+            <div class="panel-heading clickable collapsible">
+                <i class="fa fa-flag-checkered fa-lg"></i>
+                <span class="odds-type-description">Game</span> Results
+                <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body no-padding min-220 min-height-220">
+                <table class="table table-hover table-striped table-condensed no-margin">
+                <tbody>
+                <tr>
+                    <th class="event-label">Home Score</th>
+                    <td id="home_score"></td>
+                </tr>
+                <tr>
+                    <th>Away Score</th>
+                    <td id="away_score"></td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td id="status"></td>
+                </tr>
+                <tr>
+                    <th>Updated</th>
+                    <td id="results_updated"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="panel panel-theme">
+            <div class="panel-heading clickable collapsible">
+                <i class="fa fa-bullhorn fa-lg"></i>
+                <span class="odds-type-description">Game</span> Feeds
+                <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body no-padding min-220 min-height-220">
+                <table class="table table-hover table-striped table-condensed no-margin">
+                <tbody>
+                <tr>
+                    <th>Money Line</th>
+                    <td class="btn-padding-3px" id="feedMoneyline"></td>
+                </tr>
+                <tr>
+                    <th>Spread</th>
+                    <td class="btn-padding-3px" id="feedSpread"></td>
+                </tr>
+                <tr>
+                    <th>Over/Under</th>
+                    <td class="btn-padding-3px" id="feedOverUnder"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="center" height="125" style="vertical-align: middle;">
+                        <div id="feedBroadcastNow" style="display:none;">
+                            The <span class="odds-type-description lowercase">game</span> feeds for this event have not yet been broadcast.<br/><br/>
+                            <div class="btn btn-xs btn-success center" id="broadcastNow">Broadcast Now</div>
+                        </div>
+                        <div id="feedBroadcastExpired" style="display:none;">
+                            This event started <span id="feedBroadcastExpires"></span> and is no longer eligible to be broadcast.
+                        </div>
+                        <div id="feedBroadcastComplete" style="display:none;">
+                            This event has been broadcast.
+                        </div>
+                        <div id="feedBroadcastNone" style="display:none;">
+                            The <span class="odds-type-description lowercase">game</span> feeds for this event can not be broadcast.
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-theme table-responsive">
+            <div class="panel-heading no-border-radius clickable collapsible">
+                <i class="fa fa-bar-chart-o fa-lg"></i>
+                Odds Information
+                <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body no-padding">
+                <!-- Odds Types -->
+                <ul class="nav nav-pills nav-pills-no-radius nav-justified nav-primary" id="oddsTypes" style="display:none;">
+                    <li class="active"><a data-toggle="tab" href="#" onClick="update_odds_info(2);" >Game</a></li>
+                </ul>
+                <table id="odds" class="table table-striped cell-border table-hover table-condensed no-margin" width="100%">
+                <thead>
+                <tr class="info">
+                    <th class="timestamp">Source</th>
+                    <th class="team">Teams</th>
+                    <th class="moneyline">Money&nbsp;Line</th>
+                    <th class="spread">Spread</th>
+                    <th class="overunder" colspan="2">Total Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var ls   = localStorage,
+            ss   = sessionStorage,
+            cat  = ls.getItem('lastCategory'),
+            sub  = ls.getItem('lastSubcategory'),
+            odds = '';
+        // Hide matches, show event 
+        $('#sportsMatchesBack').click(function(){
+            $('#sportsEvent').hide();
+            $('#sportsMatches').show();
+        });
+        // Add odds types based on sport
+        for(var k in ODD_TYPES){
+            var show = false;
+            if((k==16 || k==17) && (cat==2||cat==5))         // Quarters (Basketball, Football)
+                show = true;
+            if((k==14 || k==15) && (cat==2||cat==5||cat==9)) // Halfs (Basketball, Football, Soccer)
+                show = true;
+            if(k>=18 && k<=20 && cat==6)                     // Periods (Hockey)
+                show = true;
+            if(show)
+                odds += '<li><a data-toggle="tab" href="#" onClick="update_odds_info(' + k + ');">' + ODD_TYPES[k] + '</a></li>';
+        }
+        if(odds!='')
+            $('#oddsTypes').append(odds).show();
+        // Broadcast now dialog box
+        $('#broadcastNow').click(function(){
+            dialogBroadcast();
+        });
+        // Load event information
+        var id = 'eventId';
+        EVENT_ID = ss.getItem(id);
+        ss.removeItem(id)
+        get_event();
+        update_odds_info(2);
+    });
+</script>
+

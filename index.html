@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>XCPFeeds.io - A Trusted Bitcoin Oracle</title>
+    <meta name="description" content="">
+    <meta name="robots"      content="index, follow">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link type="image/ico" rel="icon"       href="images/favicon.ico">
+    <link type="text/css"  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Creepster|Monoton|Prompt" >
+    <link type="text/css"  rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link type="text/css"  rel="stylesheet" href="css/lib/bootstrap-colorselector.css">
+    <link type="text/css"  rel="stylesheet" href="css/lib/bootstrap-dialog.min.css">
+    <link type="text/css"  rel="stylesheet" href="css/lib/font-awesome.min.css">
+    <link type="text/css"  rel="stylesheet" href="css/lib/font-awesome-extension.css">
+    <link type="text/css"  rel="stylesheet" href="css/lib/jquery.dataTables.min.css"/>
+    <link type="text/css"  rel="stylesheet" href="css/lib/bootstrap-select.min.css"/>
+    <link type="text/css"  rel="stylesheet" href="css/custom.css">
+    <link type="text/css"  rel="stylesheet" href="css/themes.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+</head> 
+<body>
+    <div class="topnav navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand" id="brandLogo">
+                    <div class="navbar-logo"><img src="images/logo.png"></div>
+                    <div class="navbar-sitename">
+                        XCP<span class="navbar-logo-color">FEEDS</span>
+                    </div>
+                </div>            
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li><a id="pageHome"   href="#" title="Home"><i class="fa fa-lg fa-home"></i> Home</a></li> -->
+                    <li><a id="pageSports" href="#" data-toggle="collapse" data-target=".navbar-collapse.in" title="Sports"><i class="fa fa-lg fa-soccer-ball-o"></i> Sports</a></li>
+                    <li><a id="pageAbout"  href="#" data-toggle="collapse" data-target=".navbar-collapse.in" title="About"><i class="fa fa-lg fa-info-circle"></i> About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-lg fa-bitcoin" aria-hidden="true"></i>
+                        </a>
+                        <!-- BTC Wallet -->
+                        <ul class="dropdown-menu btc-wallet">
+                            <div class="wallet-header">
+                                <i class="fa fa-lg fa-fw fa-bank"></i> Wallet Balance
+                            </div>
+                            <div class="wallet-balance">
+                                <i class="fa fa-lg fa-fw fa-bitcoin"></i><span id="btc-balance">0.00000000</span>
+                            </div>
+                            <div class="wallet-balance">
+                                <i class="fa fa-lg fa-fw fa-usd"></i><span id="fiat-balance">0.00</span>
+                            </div>
+                            <div class="wallet-header">
+                                <i class="fa fa-lg fa-fw fa-cogs"></i> Tools
+                            </div>
+                            <!-- <li><a id="walletAbout" href="#" data-toggle="collapse" data-target=".navbar-collapse.in" ><i class="fa fa-lg fa-fw fa-info-circle"></i> About Wallet</a></li> -->
+                            <li><a id="walletAddress"       href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-qrcode"></i> View Address</a></li>
+                            <li><a id="walletChangeAddress" href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-list"></i> Change Address</a></li>
+                            <li><a id="walletPassphrase"    href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-eye"></i> View Passphrase</a></li>
+                            <li><a id="walletPassword"      href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-lock"></i> Enable Password</a></li>
+                            <li><a id="walletLock"          href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-lock"></i> Lock Wallet</a></li>
+                            <li><a id="walletUnlock"        href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-unlock"></i> Unlock Wallet</a></li>
+                            <li><a id="walletReset"         href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-lg fa-fw fa-trash"></i> Reset Wallet</a></li>
+                        </ul>
+                    </li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Theme">
+                        <a href="#" class="colorselector">
+                            <select id="theme-selector" style="display: none;">
+                                <option value="theme-blue"          data-color="#0000ff">Blue</option>
+                                <option value="theme-red"           data-color="#ff0000">Red</option>
+                                <option value="theme-gold"          data-color="#ffd700">Gold</option>
+                                <option value="theme-purple"        data-color="#800080">Purple</option>
+                                <option value="theme-white"         data-color="#ffffff">White</option>
+                                <option value="theme-dark-blue"     data-color="#00008b">Dark Blue</option>
+                                <option value="theme-dark-red"      data-color="#cb0d0b">Dark Red</option>
+                                <option value="theme-turquoise"     data-color="#40e0d0">Turquoise</option>
+                                <option value="theme-yellow"        data-color="#ffff66">Yellow</option>
+                                <option value="theme-silver"        data-color="#c0c0c0">Silver</option>
+                                <option value="theme-sapphire-blue" data-color="#0067A5">Sapphire Blue</option>
+                                <option value="theme-pink"          data-color="#ff3399">Pink</option>
+                                <option value="theme-aquamarine"    data-color="#7fffd4">Aquamarine</option>
+                                <option value="theme-lime-green"    data-color="#32cd32">Lime green</option>
+                                <option value="theme-gray"          data-color="#808080">Gray</option>
+                                <option value="theme-sky-blue"      data-color="#87ceeb">Sky Blue</option>
+                                <option value="theme-orange"        data-color="#ffa500">Orange</option>
+                                <option value="theme-teal"          data-color="#008080">Teal</option>
+                                <option value="theme-green"         data-color="#008000">Green</option>
+                                <option value="theme-black"         data-color="#000000">Black</option>
+                            </select>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="container">
+            <div class="alert alert-info fade in center bold"><b>Disclaimer</b>: This site is under active development! </div>
+        </div>
+        <div class="container" role="main" id="pageContent"></div>
+        <div id="content-footer" align="center">
+            <div><a class="white" href="https://github.com/porqup1ne/xcpfeeds.io" target="_blank"><i class="fa fa-github fa-2x"></i></a></div>
+            <div style="padding: 5px 0px 10px 0px;"><a class="white bold" href="https://github.com/porqup1ne/xcpfeeds.io" target="_blank">XCPFeeds.io v0.1.0</a></div>
+        </div>
+    </div>
+
+    <!-- Javascript includes -->
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap-colorselector.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap-dialog.min.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="js/lib/numeral.js"></script>
+    <script type="text/javascript" src="js/lib/livestamp.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <!-- Wallet includes -->
+    <script type="text/javascript" src="js/lib/async.min.js"></script>
+    <script type="text/javascript" src="js/lib/bitcore-lib.min.js"></script>
+    <script type="text/javascript" src="js/lib/bitcore-message.min.js"></script>
+    <script type="text/javascript" src="js/lib/cryptojs.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.base64.js"></script>
+    <script type="text/javascript" src="js/lib/mnemonic.js"></script>
+    <script type="text/javascript" src="js/lib/util.bitcore.js"></script>
+    <script type="text/javascript" src="js/lib/util.generic.js"></script>
+    <script type="text/javascript" src="js/wallet.js"></script>
+</body>
+</html>
+

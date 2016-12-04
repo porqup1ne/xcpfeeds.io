@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<body>
+    <script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+    <script type="text/javascript">
+    $( document ).ready(function(){
+        // Stash event_id in sessionStorage
+        var ss = sessionStorage,
+            l  = String(window.location.pathname).split('/'), 
+            id = l[l.length-1];
+        ss.setItem('eventId', id);
+        // Redirect to homepage
+        window.location = '/';
+    });
+    </script>    
+</body>
+</html>
+

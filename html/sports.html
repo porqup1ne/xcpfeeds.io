@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-3 col-lg-2" id="sportsMenu">
+    </div>
+    <div class="col-md-9 col-lg-10">
+        <div id="sportsMatches">
+            <div class="panel panel-theme table-responsive">
+                <div class="panel-heading clickable collapsible">
+                    <span id="sportName"></span>
+                    <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+
+                </div>
+                <div class="panel-body no-padding">
+                    <div class="row search-results-header no-margin">
+                        <!-- Placeholder for listing info (Listing X - Y of Z) -->
+                        <div class="col-sm-4" style="padding-left:0px" id="search-results-info"></div>
+                        <div class="col-sm-4">
+                            <div class="center">
+                                Odds Format
+                                <select id="oddsFormat" class="selectpicker show-tick" data-style="btn-xs btn-theme">
+                                    <option value="american">American</option>
+                                    <option value="decimal">Decimal</option>
+                                    <!-- <option value="3">Fraction</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="padding-right:0px">
+                            <div class="pull-right">
+                                Event Type
+                                <select id="eventType" class="selectpicker show-tick" data-style="btn-xs btn-theme">
+                                    <option value="upcoming">Upcoming</option>
+                                    <option value="past">Past</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="matches" class="table table-striped cell-border table-hover table-condensed" width="100%">
+                    <thead>
+                    <tr class="info">
+                        <th class="timestamp">Starts at</th>
+                        <th class="team">Teams</th>
+                        <th class="moneyline hidden-xs">Money&nbsp;Line</th>
+                        <th class="spread hidden-xs">Spread</th>
+                        <th class="overunder hidden-xs" colspan="2">Total Points</th>
+                        <th class="view-btn">&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Placeholder for sports event information -->
+        <div id="sportsEvent">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $( document ).ready(function(){
+        // Load info about last viewed sports
+        var ls   = localStorage,
+            ss   = sessionStorage,
+            type = ls.getItem('eventType') || 'upcoming',
+            odds = ls.getItem('oddsFormat') || 'american',
+            cat  = ls.getItem('lastCategory') || 1,
+            sub  = ls.getItem('lastSubcategory') || '',
+            eid  = ss.getItem('eventId');
+        // Remove any saved event id (so we don't keep loading this event on reloads)
+        ss.removeItem('eventId');
+        // Load sports menu
+        $('#sportsMenu').load('html/sports_menu.html');
+        // Set odds format/event type dropdown values, and listen for chante
+        $('#eventType').val(type).on('changed.bs.select', function(e){ update_event_type($(this).val()); });
+        $('#oddsFormat').val(odds).on('changed.bs.select', function(e){ update_odds_format($(this).val()); });
+        $('.selectpicker').selectpicker({ width: 100 });
+        // Load the sport information
+        load_sport(cat, sub, type);
+        // If we have an event_id, load the event information
+        if(eid)
+            load_sport_event(eid);
+    });
+</script>

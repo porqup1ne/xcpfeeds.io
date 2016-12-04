@@ -1,0 +1,47 @@
+<div id="sports-menu" class="panel panel-theme">
+    <div class="panel-heading clickable collapsible">
+        Sports
+        <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    </div>
+    <div class="panel-body no-padding">
+        <div class="list-group no-margin">
+            <a href="#" id="sportBaseball" title="Baseball" class="list-group-item"><img src="images/icons/20/baseball.png" alt="Baseball"> Baseball</a>
+            <a href="#basketball" title="Basketball" class="list-group-item" data-toggle="collapse" data-parent="#sports-menu"><img src="images/icons/20/basketball.png"> Basketball</a>
+            <div id="basketball" class="collapse submenu">
+                <a href="#" id="sportBasketBall"      class="list-group-item" title="Basketball" ><img src="images/icons/20/basketball.png"> All</a>
+                <a href="#" id="sportBasketBallNBA"   class="list-group-item" title="NBA - National Basketball Association"><img src="images/icons/20/basketball.png"> NBA</a>
+                <a href="#" id="sportBasketBallNCAAB" class="list-group-item" title="NCAAB - National Collegiate Athletic Association Basketball"><img src="images/icons/20/basketball.png"> NCAAB</a>
+                <a href="#" id="sportBasketBallWNBA"  class="list-group-item" title="WNBA - Womens National Basketball Association"><img src="images/icons/20/basketball.png"> WNBA</a>
+            </div>
+            <!-- <a href="#" id="sportCricket" title="Cricket" class="list-group-item"><img src="images/icons/20/cricket.png"> Cricket</a> -->
+            <a href="#football" class="list-group-item" data-toggle="collapse" data-parent="#sports-menu"><img src="images/icons/20/football.png"> Football</a>
+            <div id="football" class="collapse submenu" >
+                <a href="#" id="sportFootball"      class="list-group-item" title="Football"><img src="images/icons/20/football.png"> All</a>
+                <a href="#" id="sportFootballNFL"   class="list-group-item" title="NFL - National Football League "><img src="images/icons/20/football.png"> NFL</a>
+                <a href="#" id="sportFootballNCAAF" class="list-group-item" title="NCAAF - National Collegiate Athletic Association Football"><img src="images/icons/20/football.png"> NCAAF</a>
+            </div>
+            <a href="#" id="sportHockey" class="list-group-item" title="Hockey"><img src="images/icons/20/hockey.png"> Hockey</a>
+            <!-- <a href="#" id="sportHorses" class="list-group-item" title="Horse Racing"><img src="images/icons/20/horse.png"> Horse Racing</a> -->
+            <a href="#" id="sportMMA"    class="list-group-item" title="MMA - Mixed Martial Arts"><img src="images/icons/20/mixed-martial-arts.png"> MMA</a>
+            <a href="#" id="sportSoccer" class="list-group-item" title="Soccer"><img src="images/icons/20/soccer.png"> Soccer</a>
+            <a href="#" id="sportTennis" class="list-group-item" title="Tennis"><img src="images/icons/20/tennis.png"> Tennis</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#sportBaseball').click(function(){        load_sport(1);   })
+    $('#sportBasketBall').click(function(){      load_sport(2);   });
+    $('#sportBasketBallNBA').click(function(){   load_sport(2,1); });
+    $('#sportBasketBallNCAAB').click(function(){ load_sport(2,2); });
+    $('#sportBasketBallWNBA').click(function(){  load_sport(2,8); });
+    $('#sportCricket').click(function(){         load_sport(3);   });
+    $('#sportFootball').click(function(){        load_sport(5);   });
+    $('#sportFootballNFL').click(function(){     load_sport(5,4); });
+    $('#sportFootballNCAAF').click(function(){   load_sport(5,3); });
+    $('#sportHockey').click(function(){          load_sport(6);   });
+    $('#sportHorses').click(function(){          load_sport(7);   });
+    $('#sportMMA').click(function(){             load_sport(8);   });
+    $('#sportSoccer').click(function(){          load_sport(9);   }); 
+    $('#sportTennis').click(function(){          load_sport(10);  });
+</script>
