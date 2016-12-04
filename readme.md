@@ -1,5 +1,5 @@
 # xcpfeeds.io
-XCPFeeds.io is a Bitcoin oracle which broadcasts truth to the bitcoin blockchain. This site displays a list of future events which can be broadcast to the Bitcoin blockchain using the Counterparty platform.
+XCPFeeds.io is a Bitcoin oracle which broadcasts truth to the bitcoin blockchain. 
 
 ### Overview
 XCPFeeds.io displays a list of future events which can be broadcast to the Bitcoin blockchain using the Counterparty platform.
